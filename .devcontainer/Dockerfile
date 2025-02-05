@@ -13,10 +13,10 @@ RUN apt-get update && \
     echo "$USERNAME ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/$USERNAME && \
     chmod 0440 /etc/sudoers.d/$USERNAME
 
-# RUN apt update && apt upgrade -y && apt install git -y
+RUN apt update && apt upgrade -y && apt install git -y
 
 USER $USERNAME
 
-# RUN rosdep update
+RUN rosdep update
 
 RUN echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
